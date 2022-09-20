@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\MainUpdate">
+      <UniqueIdentifier>{456382b6-cc1c-4ddc-9439-c7ce49c84398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{50aea63f-546d-41ba-97a3-7edea77d1dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\SceneManager">
+      <UniqueIdentifier>{6887a66c-d629-4443-ad83-19522d6aa132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{1713bacf-fa10-4ecc-841a-906cc723963e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Player">
+      <UniqueIdentifier>{7e94ad68-112e-4055-a9fe-954f4284354d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Enemy">
+      <UniqueIdentifier>{67454dcb-5c5d-499e-9cb9-9a70fc88cedf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{b736b051-8d7a-4803-914b-de9ee9fd9a03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Logo">
+      <UniqueIdentifier>{cb2f21e3-29b7-44d0-9c3b-bf4dcab65c8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Menu">
+      <UniqueIdentifier>{170ee800-69d4-4235-bb5a-f6b551000221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Stage">
+      <UniqueIdentifier>{36a668bb-fe83-4d00-9c7c-a3cb388fa3e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\InputManager">
+      <UniqueIdentifier>{39a860b0-4c42-4b90-9646-12bbf2421e3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\ObjectManager">
+      <UniqueIdentifier>{b8090ce1-8f0d-442a-aff8-6ca51a16f94d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\CursorManager">
+      <UniqueIdentifier>{04b46337-593e-42f7-a52f-54398e7c626a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\CollisionManager">
+      <UniqueIdentifier>{de150fd5-0a46-4d57-8d63-6df61a9728b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\MathManager">
+      <UniqueIdentifier>{8d371e43-e765-4637-9a51-132c3f412acc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\ObjectFactory">
+      <UniqueIdentifier>{8226b777-b2a5-456b-9f51-3e95fe539c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Upgrade">
+      <UniqueIdentifier>{bf09c719-95eb-4d5d-907d-ea0f33289c3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\ExpItem">
+      <UniqueIdentifier>{08c2af52-a25e-4899-bb50-36cebdcbdfeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Skill">
+      <UniqueIdentifier>{d5e737db-b61b-4523-b7cc-686eda3358fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Skill\SkillBridge">
+      <UniqueIdentifier>{23fa5a11-215e-42d3-8827-bb302e9fc619}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\Pattern">
+      <UniqueIdentifier>{a864709b-4242-4ecb-8299-acee52ca0f9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\Pattern\PrototypeManager">
+      <UniqueIdentifier>{6829bf31-6e37-466b-997e-f9f9ca139b38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\Pattern\ObjectpoolManager">
+      <UniqueIdentifier>{d191e265-9edf-48c2-881e-ddf04d319e63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Skill\Arrow">
+      <UniqueIdentifier>{79f5a83e-cee7-493b-b2e5-76381f9cd7f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Skill\Book">
+      <UniqueIdentifier>{6a943d1b-109b-4c02-899d-51cb2db1c542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Skill\Bullet">
+      <UniqueIdentifier>{9c855e0c-3a54-4ba3-b876-a5aba0fd07d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Skill\Fire">
+      <UniqueIdentifier>{310ff81e-3d72-4004-a6d3-331636764099}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MainUpdate.cpp">
+      <Filter>소스 파일\MainUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>소스 파일\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일\Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>소스 파일\Scene\Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>소스 파일\Scene\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>소스 파일\Scene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일\Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CursorManager.cpp">
+      <Filter>소스 파일\Manager\CursorManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>소스 파일\Manager\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Upgrade.cpp">
+      <Filter>소스 파일\Scene\Upgrade</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpItem.cpp">
+      <Filter>소스 파일\Object\ExpItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Skill.cpp">
+      <Filter>소스 파일\Object\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="PrototypeManager.cpp">
+      <Filter>소스 파일\Manager\Pattern\PrototypeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectpoolManager.cpp">
+      <Filter>소스 파일\Manager\Pattern\ObjectpoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>소스 파일\Object\Skill\Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Book.cpp">
+      <Filter>소스 파일\Object\Skill\Book</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\Object\Skill\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Fire.cpp">
+      <Filter>소스 파일\Object\Skill\Fire</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainUpdate.h">
+      <Filter>소스 파일\MainUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>소스 파일\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일\Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>소스 파일\Scene\Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>소스 파일\Scene\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>소스 파일\Scene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>소스 파일\Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CursorManager.h">
+      <Filter>소스 파일\Manager\CursorManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>소스 파일\Manager\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MathManager.h">
+      <Filter>소스 파일\Manager\MathManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>소스 파일\Manager\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Upgrade.h">
+      <Filter>소스 파일\Scene\Upgrade</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpItem.h">
+      <Filter>소스 파일\Object\ExpItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Skill.h">
+      <Filter>소스 파일\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillBridge.h">
+      <Filter>소스 파일\Object\Skill\SkillBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PrototypeManager.h">
+      <Filter>소스 파일\Manager\Pattern\PrototypeManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectpoolManager.h">
+      <Filter>소스 파일\Manager\Pattern\ObjectpoolManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow.h">
+      <Filter>소스 파일\Object\Skill\Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>소스 파일\Object\Skill\Book</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>소스 파일\Object\Skill\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Fire.h">
+      <Filter>소스 파일\Object\Skill\Fire</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
