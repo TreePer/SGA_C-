@@ -81,7 +81,6 @@
     <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CursorManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="ExpItem.cpp" />

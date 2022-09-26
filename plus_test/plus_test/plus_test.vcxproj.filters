@@ -129,9 +129,6 @@
     <ClCompile Include="CursorManager.cpp">
       <Filter>소스 파일\Manager\CursorManager</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
-      <Filter>소스 파일\Manager\CollisionManager</Filter>
-    </ClCompile>
     <ClCompile Include="Upgrade.cpp">
       <Filter>소스 파일\Scene\Upgrade</Filter>
     </ClCompile>
