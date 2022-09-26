@@ -2,43 +2,51 @@
 #include "CursorManager.h"
 #include "MathManager.h"
 
-Bullet::Bullet() : Speed(0), time(GetTickCount64()), x(0), y(0) {
+Bullet::Bullet() : Speed(0), x(0), y(0) {
 }
 
 Bullet::~Bullet() {
 	Release();
 }
 
-void Bullet::Start() {
+Object* Bullet::Start(string _Key) {
 	Info.Position = Vector3(0.0f, 0.0f);
 	Info.Rotation = Vector3(0.0f, 0.0f);
 	Info.Scale = Vector3(1.0f, 1.0f);
 	NewDirection();
-	Key = "Bullet";
-
-
-
-	Target = nullptr;
 
 	Speed = 3.0f;
 
 	ATK = 50;
 
 	time = GetTickCount64();
+	
+	return this;
 }
 
-int Bullet::Update(Transform& _Transform) {
-	if (time + 10000 <= GetTickCount64())
+int Bullet::Update() {
+	if (time + 10000 <= GetTickCount64()) {
+		time = GetTickCount64();
 		return 1;
+	}
 
-	if (Info.Position.x > 0 && Info.Position.x < 1)
+	if (Info.Position.x > 0 && Info.Position.x < 1) {
 		Info.Position.x = 0;
-	if (Info.Position.x > 128 && Info.Position.x < 129)
+		NewDirection();
+	}
+	if (Info.Position.x > 128 && Info.Position.x < 129) {
 		Info.Position.x = 129;
-	if (Info.Position.y > 0 && Info.Position.y < 1)
+		NewDirection();
+	}
+	if (Info.Position.y > 0 && Info.Position.y < 1) {
 		Info.Position.y = 0;
-	if (Info.Position.y > 38 && Info.Position.y < 39)
+		NewDirection();
+	}
+	if (Info.Position.y > 38 && Info.Position.y < 39) {
 		Info.Position.y = 39;
+		NewDirection();
+	}
+
 
 	test = Info.Position + Info.Direction * 5;
 
@@ -73,8 +81,8 @@ void Bullet::Release() {
 void Bullet::NewDirection() {
 	srand(GetTickCount64());
 
-	x = rand() % 130 + 1;
-	y = rand() % 40 + 1;
+	x = rand() % 130;
+	y = rand() % 40;
 
 	if (x > y) {
 		y /= x;

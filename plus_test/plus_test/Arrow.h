@@ -1,15 +1,16 @@
 #pragma once
-#include "SkillBridge.h"
-class Arrow : public SkillBridge {
+#include "Object.h"
+class Arrow : public Object {
 private:
 	
 public:
 	Arrow();
+	Arrow(Transform Info) : Object(Info) {};
 	virtual ~Arrow();
 
-	virtual void Start() override;
-	virtual int Update(Transform& _Transform)override;
+	virtual Object* Start(string _Key) override;
+	virtual int Update()override;
 	virtual void Render()override;
 	virtual void Release()override;
-	virtual Bridge* Clone()override { return new Arrow(*this); }
+	virtual Object* Clone()override { return new Arrow(*this); }
 };

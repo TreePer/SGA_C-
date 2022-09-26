@@ -1,5 +1,7 @@
 #include "Arrow.h"
 #include "CursorManager.h"
+#include "ObjectManager.h"
+#include "Player.h"
 Arrow::Arrow() {
 }
 
@@ -7,14 +9,16 @@ Arrow::~Arrow() {
     Release();
 }
 
-void Arrow::Start() {
+Object* Arrow::Start(string _Key) {
     Info.Position = Vector3(0.0f, 0.0f);
     Info.Rotation = Vector3(0.0f, 0.0f);
     Info.Scale = Vector3(2.0f, 1.0f);
     ATK = 200;
+    return this;
 }
 
-int Arrow::Update(Transform& _Transform) {
+
+int Arrow::Update() {
     if (Info.Rotation.y == 0.0f && Info.Rotation.x == 1.0f) {
         if (Info.Position.x < 128)
             Info.Position.x += 2;

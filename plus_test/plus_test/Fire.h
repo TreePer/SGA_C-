@@ -1,21 +1,17 @@
 #pragma once
-#include "SkillBridge.h"
-class Fire : public SkillBridge {
+#include "Object.h"
+class Fire : public Object {
 private:
 	int stat;
 public:
 	Fire();
+	Fire(Transform Info) : Object(Info) {}
 	virtual ~Fire();
 
-	virtual void Start() override;
-	virtual int Update(Transform& _Transform)override;
+	virtual Object* Start(string _Key) override;
+	virtual int Update()override;
 	virtual void Render()override;
 	virtual void Release()override;
 
-	int GetStat() { return stat; }
-	void SetStat(int _a) { stat = _a; }
-
-	void GetPlayerInfo(Object* _pPlayer);
-
-	virtual Bridge* Clone()override { return new Fire(*this); }
+	virtual Object* Clone()override { return new Fire(*this); }
 };

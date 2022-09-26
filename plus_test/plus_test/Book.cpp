@@ -1,10 +1,25 @@
 #include "Book.h"
 #include "CursorManager.h"
 #include "MathManager.h"
+#include "ObjectManager.h"
 
-Book::Book() : angle(0), Time(0), onoff(0) {
+Book::Book() : angle(0), onoff(0) {
 	for (int i = 0; i < 8; ++i)
 		Texture[i] = nullptr;
+}
+
+Book::~Book() {
+	Release();
+}
+
+Object* Book::Start(string _Key) {
+	Info.Position = Vector3(0.0f, 0.0f);
+	Info.Rotation = Vector3(0.0f, 0.0f);
+	Info.Scale = Vector3(2.0f, 1.0f);
+
+	angle = 0.0f;
+	ATK = 200;
+	time = GetTickCount64();
 
 	x[0] = 6;
 	x[1] = 5;
@@ -18,7 +33,7 @@ Book::Book() : angle(0), Time(0), onoff(0) {
 	x[9] = 0;
 	x[10] = 3;
 	x[11] = 5;
-	
+
 
 	y[0] = 0;
 	y[1] = 2;
@@ -32,21 +47,6 @@ Book::Book() : angle(0), Time(0), onoff(0) {
 	y[9] = -3;
 	y[10] = -3;
 	y[11] = -2;
-
-}
-
-Book::~Book() {
-	Release();
-}
-
-void Book::Start() {
-	Info.Position = Vector3(0.0f, 0.0f);
-	Info.Rotation = Vector3(0.0f, 0.0f);
-	Info.Scale = Vector3(2.0f, 1.0f);
-
-	angle = 0.0f;
-	ATK = 200;
-	Time = GetTickCount64();
 
 	for (int i = 0; i < 8; ++i) {
 		Texture[i] = new Transform;
@@ -85,10 +85,18 @@ void Book::Start() {
 	for (int i = 0; i < 6; ++i) {
 		stat[i] = i * 2;
 	}
+	return this;
 }
 
-int Book::Update(Transform& _Transform) {
-	if (Time + 40 < GetTickCount64()) {
+int Book::Update() {
+	Info.Position = ObjectManager::GetInstance()->GetPlayer()->GetPosition();
+
+	if (ObjectManager::GetInstance()->GetBookTime() + 3500 <= GetTickCount64()) {
+		ObjectManager::GetInstance()->SetBookTime(GetTickCount64());
+		return 1;
+	}
+
+	if (Time1 + 40 < GetTickCount64()) {
 
 		for (int i = 0; i < 6; ++i) {
 			if (stat[i] + 1 < 12)
@@ -99,7 +107,7 @@ int Book::Update(Transform& _Transform) {
 			Texture[i]->Position = Info.Position + Vector3(x[stat[i]], y[stat[i]]);
 		}
 
-		Time = GetTickCount64();
+		Time1 = GetTickCount64();
 	}
 
 	return 0;
@@ -108,6 +116,10 @@ int Book::Update(Transform& _Transform) {
 void Book::Render() {
 
 	for (int i = 0; i < 6; i++) {
+		if(Texture[i]->Position.x > 0 &&
+			Texture[i]->Position.x < 129 &&
+			Texture[i]->Position.y > 0 &&
+			Texture[i]->Position.y < 39)
 		CursorManger::GetInstance()->WriteBuffer(Texture[i]->Position.x, Texture[i]->Position.y, (char*)"бр", 13);
 	}
 }

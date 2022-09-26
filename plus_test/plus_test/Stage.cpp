@@ -21,6 +21,9 @@ void Stage::Start() {
 
 	if (pObj != nullptr)
 		ObjectManager::GetInstance()->SetPlayer(pObj);
+
+	ObjectManager::GetInstance()->AddObject("Fire");
+	ObjectManager::GetInstance()->AddObject("Book");
 }
 
 void Stage::Update() {

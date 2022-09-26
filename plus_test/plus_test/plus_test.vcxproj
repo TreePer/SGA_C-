@@ -98,14 +98,12 @@
     <ClCompile Include="PrototypeManager.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="Skill.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Upgrade.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arrow.h" />
     <ClInclude Include="Book.h" />
-    <ClInclude Include="Bridge.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Constant.h" />
@@ -128,8 +126,6 @@
     <ClInclude Include="PrototypeManager.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Skill.h" />
-    <ClInclude Include="SkillBridge.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="Upgrade.h" />

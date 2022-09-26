@@ -70,9 +70,6 @@
     <Filter Include="소스 파일\Object\Skill">
       <UniqueIdentifier>{d5e737db-b61b-4523-b7cc-686eda3358fd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Object\Skill\SkillBridge">
-      <UniqueIdentifier>{23fa5a11-215e-42d3-8827-bb302e9fc619}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Manager\Pattern">
       <UniqueIdentifier>{a864709b-4242-4ecb-8299-acee52ca0f9f}</UniqueIdentifier>
     </Filter>
@@ -101,9 +98,6 @@
     </ClCompile>
     <ClCompile Include="MainUpdate.cpp">
       <Filter>소스 파일\MainUpdate</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>소스 파일\Object</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>소스 파일\Object\Player</Filter>
@@ -144,9 +138,6 @@
     <ClCompile Include="ExpItem.cpp">
       <Filter>소스 파일\Object\ExpItem</Filter>
     </ClCompile>
-    <ClCompile Include="Skill.cpp">
-      <Filter>소스 파일\Object\Skill</Filter>
-    </ClCompile>
     <ClCompile Include="PrototypeManager.cpp">
       <Filter>소스 파일\Manager\Pattern\PrototypeManager</Filter>
     </ClCompile>
@@ -164,6 +155,9 @@
     </ClCompile>
     <ClCompile Include="Fire.cpp">
       <Filter>소스 파일\Object\Skill\Fire</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -226,15 +220,6 @@
     </ClInclude>
     <ClInclude Include="ExpItem.h">
       <Filter>소스 파일\Object\ExpItem</Filter>
-    </ClInclude>
-    <ClInclude Include="Skill.h">
-      <Filter>소스 파일\Object\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="Bridge.h">
-      <Filter>소스 파일\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="SkillBridge.h">
-      <Filter>소스 파일\Object\Skill\SkillBridge</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager.h">
       <Filter>소스 파일\Manager\ObjectManager</Filter>

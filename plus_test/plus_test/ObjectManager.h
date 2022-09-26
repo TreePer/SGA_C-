@@ -6,7 +6,8 @@ private :
 	static ObjectManager* Instance;
 	map<string, list<Object*>> ObjectList;
 	Object* pPlayer;
-
+	ULONGLONG FireTime;
+	ULONGLONG BookTime;
 	int dmg;
 private :
 	ObjectManager();
@@ -23,26 +24,17 @@ public :
 	void Release();
 
 	void AddObject(string _Key);
-	void AddObject(Vector3 _position, string _Key);
-
-	void CreateBullet(int _Index);
-	void CreateArrow();
-	void CreateFire();
-	void CreateBook();
-	void CreateExp(Object* _pObject);
+	void AddObject(Vector3 _Position, string _Key);
+	void AddObject(Transform _Info, string _Key);
 
 	Object* GetPlayer() { return pPlayer; }
 	void SetPlayer(Object* _Object) { pPlayer = _Object; }
-	//Object* GetFire() { if(pFire) return pFire; }
-	//Object* GetBook() { if(pBook) return pBook; }
 
-
-	/*
-	void FireStat();
-	void BookStat();
-
-	*/
-
+	ULONGLONG GetFireTime() { return FireTime; }
+	void SetFireTime(ULONGLONG _time) { FireTime = _time; }
+	ULONGLONG GetBookTime() { return BookTime; }
+	void SetBookTime(ULONGLONG _time) { BookTime = _time; }
+	
 	~ObjectManager();
 };
 

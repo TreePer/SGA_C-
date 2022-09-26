@@ -23,8 +23,6 @@ public :
 
 	virtual Object* Clone()override { return new Player(*this); }
 
-	void CreateWeapon();
-
 	void SetDef(int _Value);
 	void SetSpeed(int _Value);
 	void SetMagnet(int _Value);
@@ -44,4 +42,3 @@ public :
 	Player(Transform _Info) : Object(_Info) {};
 	~Player();
 };
-

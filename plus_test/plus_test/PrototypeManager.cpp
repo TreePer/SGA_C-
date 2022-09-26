@@ -2,6 +2,10 @@
 #include "Enemy.h"
 #include "Player.h"
 #include "ExpItem.h"
+#include "Arrow.h"
+#include "Book.h"
+#include "Bullet.h"
+#include "Fire.h"
 
 PrototypeManager* PrototypeManager::Instance = nullptr;
 
@@ -25,6 +29,15 @@ void PrototypeManager::Initialize() {
 
 	Key = "ExpItem";
 	ObjectList[Key] = (new ExpItem(Info))->Start(Key);
+
+	Key = "Arrow";
+	ObjectList[Key] = (new Arrow(Info))->Start(Key);
+	Key = "Book";
+	ObjectList[Key] = (new Book(Info))->Start(Key);
+	Key = "Bullet";
+	ObjectList[Key] = (new Bullet(Info))->Start(Key);
+	Key = "Fire";
+	ObjectList[Key] = (new Fire(Info))->Start(Key);
 }
 
 Object* PrototypeManager::FindObject(string _Key) {

@@ -1,6 +1,7 @@
 #include "ObjectpoolManager.h"
 #include "PrototypeManager.h"
 #include "Object.h"
+#include "CursorManager.h"
 
 ObjectpoolManager* ObjectpoolManager::Instance = nullptr;
 
@@ -45,6 +46,27 @@ void ObjectpoolManager::SwitchingObject(string _Key, Vector3 _Position) {
 	Object* pObj = iter->second.back();
 	pObj->SetPosition(_Position);
 
+	if (_Key == "Bullet")
+		pObj->SetTime(GetTickCount64());
+		
+
+	EnableList[_Key].push_back(pObj);
+	iter->second.pop_back();
+}
+
+void ObjectpoolManager::SwitchingObject(string _Key, Transform _Info) {
+	map<string, list<Object*>>::iterator iter = DisableList.find(_Key);
+
+	if (iter->second.empty())
+		AddObject(_Key);
+
+
+	Object* pObj = iter->second.back();
+	pObj->SetPosition(_Info.Position);
+	pObj->SetRotation(_Info.Rotation);
+	if (_Key == "Bullet")
+		pObj->SetTime(GetTickCount64());
+
 	EnableList[_Key].push_back(pObj);
 	iter->second.pop_back();
 }
@@ -69,7 +91,7 @@ void ObjectpoolManager::Render() {
 		for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2) {
 			(*iter2)->Render();
 		}
-	}
+	}	
 }
 
 ObjectpoolManager::ObjectpoolManager() {

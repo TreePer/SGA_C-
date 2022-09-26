@@ -2,6 +2,7 @@
 #include "InputManager.h"
 #include "ObjectManager.h"
 #include "CursorManager.h"
+#include "ObjectpoolManager.h"
 
 Object* Player::Start(string _Key) {
 	LV = 1;
@@ -18,7 +19,7 @@ Object* Player::Start(string _Key) {
 	BookTime = GetTickCount64();
 	
 	Info.Position = Vector3(74.0f, 20.0f);
-	Info.Rotation = Vector3(0.0f, 0.0f);
+	Info.Rotation = Vector3(1.0f, 0.0f);
 	Info.Scale = Vector3(1.0f, 1.0f);
 	Target = nullptr;
 
@@ -56,24 +57,23 @@ int Player::Update() {
 		Info.Rotation.y = 0;
 	}
 
-	/*
-	if (FireTime + 5000 < GetTickCount64()) {
-		ObjectManager::GetInstance()->FireStat();
-		FireTime = GetTickCount64();
+	
+	if (ObjectManager::GetInstance()->GetFireTime() + 5100 < GetTickCount64()) {
+		ObjectManager::GetInstance()->AddObject(Info, "Fire");
+		ObjectManager::GetInstance()->SetFireTime(GetTickCount64());
 	}
 
-	if (BookTime + 3500 < GetTickCount64()) {
-		ObjectManager::GetInstance()->BookStat();
-		BookTime = GetTickCount64();
+	if (ObjectManager::GetInstance()->GetBookTime() + 3600 < GetTickCount64()) {
+		ObjectManager::GetInstance()->AddObject(Info, "Book");
+		ObjectManager::GetInstance()->SetBookTime(GetTickCount64());
 	}
 	
 
 	if (Time + 500 < GetTickCount64()) {
+		ObjectManager::GetInstance()->AddObject(Info, "Arrow");
+		ObjectManager::GetInstance()->AddObject(Info, "Bullet");
 		Time = GetTickCount64();
-		ObjectManager::GetInstance()->CreateBullet(0);
-		ObjectManager::GetInstance()->CreateArrow();
 	}
-	*/
 
 	return 0;
 }
@@ -97,12 +97,6 @@ void Player::Render() {
 
 void Player::Release() {
 }
-
-void Player::CreateWeapon() {
-	//ObjectManager::GetInstance()->CreateBook();
-	//ObjectManager::GetInstance()->CreateFire();
-}
-
 void Player::SetDef(int _Value) { DEF = _Value; }
 void Player::SetSpeed(int _Value) { SPEED = _Value; }
 void Player::SetMagnet(int _Value) { MAGNET = _Value; }

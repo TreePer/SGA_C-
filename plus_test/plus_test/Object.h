@@ -6,6 +6,7 @@ protected :
 	Transform Info;
 	Object* Target;
 	string Key;
+	ULONGLONG time;
 	int HP;
 	int ATK;
 public :
@@ -41,6 +42,8 @@ public :
 
 	string GetKey() { return Key; }
 	void SetKey(string _Key) { Key = _Key; }
+
+	void SetTime(ULONGLONG _time) { time = _time; }
 
 	Object();
 	Object(Transform _Info) : Info(_Info), Target(nullptr) {};
