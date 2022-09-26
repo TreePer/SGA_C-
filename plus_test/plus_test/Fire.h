@@ -1,8 +1,7 @@
 #pragma once
 #include "Object.h"
 class Fire : public Object {
-private:
-	int stat;
+
 public:
 	Fire();
 	Fire(Transform Info) : Object(Info) {}

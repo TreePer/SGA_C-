@@ -1,6 +1,7 @@
 #include "Bullet.h"
 #include "CursorManager.h"
 #include "MathManager.h"
+#include "ObjectManager.h"
 
 Bullet::Bullet() : Speed(0), x(0), y(0) {
 }
@@ -64,6 +65,8 @@ int Bullet::Update() {
 	else {
 		Info.Position += Info.Direction * 5;
 	}
+
+	ObjectManager::GetInstance()->CollisionCheck(this);
 
 	return 0;
 }

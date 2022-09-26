@@ -20,6 +20,7 @@ public :
 	void AddObject(string _Key);
 	void SwitchingObject(string _Key, Vector3 _Position = Vector3());
 	void SwitchingObject(string _Key, Transform _Info = Transform());
+	void CollisonObject(Object* _pObj);
 	void Update();
 	void Render();
 

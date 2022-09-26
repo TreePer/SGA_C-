@@ -43,6 +43,8 @@ int Arrow::Update() {
         else
             return 1;
     }
+
+    ObjectManager::GetInstance()->CollisionCheck(this);
     return 0;
 }
 

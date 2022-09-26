@@ -71,6 +71,10 @@ void ObjectManager::AddObject(Transform _Info, string _Key) {
 	ObjectpoolManager::GetInstance()->SwitchingObject(_Key, _Info);
 }
 
+void ObjectManager::CollisionCheck(Object* _pObj) {
+	ObjectpoolManager::GetInstance()->CollisonObject(_pObj);
+}
+
 ObjectManager::~ObjectManager() {
 	Release();
 }

@@ -4,7 +4,7 @@
 #include "Object.h"
 #include "ObjectManager.h"
 
-Fire::Fire() : stat(0) {
+Fire::Fire() {
 }
 
 Fire::~Fire() {
@@ -36,6 +36,9 @@ int Fire::Update() {
 		ObjectManager::GetInstance()->SetFireTime(GetTickCount64());
 		return 1;
 	}	
+
+	ObjectManager::GetInstance()->CollisionCheck(this);
+	
 
 	return 0;
 }

@@ -3,7 +3,7 @@
 int main(void) {	
 	ULONGLONG Time = GetTickCount64();
 
-	system("mode con cols=130 lines=40");
+	system("mode con cols=131 lines=40");
 
 	MainUpdate main;
 	main.Start();

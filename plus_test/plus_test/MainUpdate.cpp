@@ -5,7 +5,7 @@
 #include "PrototypeManager.h"
 
 void MainUpdate::Start() {
-	CursorManger::GetInstance()->CreateBuffer(130.0f, 40.0f);
+	CursorManger::GetInstance()->CreateBuffer(131.0f, 40.0f);
 	PrototypeManager::GetInstance()->Initialize();
 	SceneManager::GetInstance()->SetScene(SCENEID::LOGO);
 }

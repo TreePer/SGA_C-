@@ -24,6 +24,11 @@ int Enemy::Update() {
 	Info.Direction = MathManager::GetDirection(Info.Position, Target->GetPosition());
 	Info.Position += Info.Direction * 0.3;
 
+	if (HP < 1) {
+		ObjectManager::GetInstance()->AddObject(Info.Position, "ExpItem");
+		return 1;
+	}
+
 	return 0;
 }
 

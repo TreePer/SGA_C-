@@ -27,6 +27,8 @@ public :
 	void AddObject(Vector3 _Position, string _Key);
 	void AddObject(Transform _Info, string _Key);
 
+	void CollisionCheck(Object* _pObj);
+
 	Object* GetPlayer() { return pPlayer; }
 	void SetPlayer(Object* _Object) { pPlayer = _Object; }
 

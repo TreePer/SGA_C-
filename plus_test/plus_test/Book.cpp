@@ -20,6 +20,7 @@ Object* Book::Start(string _Key) {
 	angle = 0.0f;
 	ATK = 200;
 	time = GetTickCount64();
+	Key = "Book";
 
 	x[0] = 6;
 	x[1] = 5;
@@ -109,6 +110,8 @@ int Book::Update() {
 
 		Time1 = GetTickCount64();
 	}
+
+	ObjectManager::GetInstance()->CollisionCheck(this);
 
 	return 0;
 }

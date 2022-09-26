@@ -2,6 +2,9 @@
 #include "PrototypeManager.h"
 #include "Object.h"
 #include "CursorManager.h"
+#include "CollisionManager.h"
+#include "Book.h"
+#include "CursorManager.h"
 
 ObjectpoolManager* ObjectpoolManager::Instance = nullptr;
 
@@ -46,6 +49,9 @@ void ObjectpoolManager::SwitchingObject(string _Key, Vector3 _Position) {
 	Object* pObj = iter->second.back();
 	pObj->SetPosition(_Position);
 
+	if(_Key == "Enemy")
+		pObj->SetHp(200);
+
 	if (_Key == "Bullet")
 		pObj->SetTime(GetTickCount64());
 		
@@ -71,6 +77,29 @@ void ObjectpoolManager::SwitchingObject(string _Key, Transform _Info) {
 	iter->second.pop_back();
 }
 
+void ObjectpoolManager::CollisonObject(Object* _pObj) {
+	
+	if (!EnableList.empty()) {
+		map<string, list<Object*>>::iterator iter = EnableList.find("Enemy");
+		if (iter != EnableList.end()) {
+			for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2) {
+				if (_pObj->GetKey() == "Book") {
+					for (int i = 0; i < 6; ++i) {
+						if (CollisionManager::RectCollision(((Book*)_pObj)->GetTransform(i), (*iter2)->GetTransform())) {
+							(*iter2)->SetHp((*iter2)->GetHp() - _pObj->GetAtk());
+						}
+					}
+				}
+				else {
+					if (CollisionManager::RectCollision(_pObj->GetTransform(), (*iter2)->GetTransform())) {
+						(*iter2)->SetHp((*iter2)->GetHp() - _pObj->GetAtk());
+					}
+				}
+			}
+		}
+	}
+}
+
 void ObjectpoolManager::Update() {
 	for (auto iter = EnableList.begin(); iter != EnableList.end(); ++iter) {
 		for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ) {
@@ -92,6 +121,9 @@ void ObjectpoolManager::Render() {
 			(*iter2)->Render();
 		}
 	}	
+
+	CursorManger::GetInstance()->WriteBuffer(10, 10, EnableList["Enemy"].size());
+	CursorManger::GetInstance()->WriteBuffer(10, 11, DisableList["Enemy"].size());
 }
 
 ObjectpoolManager::ObjectpoolManager() {
