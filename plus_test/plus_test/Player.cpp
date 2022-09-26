@@ -11,7 +11,7 @@ Object* Player::Start(string _Key) {
 	ATK = 1;
 	DEF = 1;
 	SPEED = 1;
-	MAGNET = 0;
+	MAGNET = 2;
 	Key = "Player";
 
 	Time = GetTickCount64();
@@ -75,6 +75,8 @@ int Player::Update() {
 		Time = GetTickCount64();
 	}
 
+	PlayerLevelCheck();
+
 	return 0;
 }
 
@@ -106,7 +108,7 @@ void Player::SetExp(int _Value) { EXP = _Value; }
 
 
 void Player::PlayerLevelCheck() { 
-	if (MAXEXP < EXP) {
+	if (MAXEXP <= EXP) {
 		EXP -= MAXEXP;
 		++LV;
 		MAXEXP = LV * 100;

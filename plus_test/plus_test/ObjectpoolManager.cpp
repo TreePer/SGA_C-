@@ -54,6 +54,9 @@ void ObjectpoolManager::SwitchingObject(string _Key, Vector3 _Position) {
 
 	if (_Key == "Bullet")
 		pObj->SetTime(GetTickCount64());
+
+	if (_Key == "ExpItem")
+		pObj->SetTarger(nullptr);
 		
 
 	EnableList[_Key].push_back(pObj);

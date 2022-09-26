@@ -3,7 +3,6 @@
 class ExpItem : public Object {
 private:
 	int EXP;
-	int stat;
 public:
 	ExpItem();
 	ExpItem(Transform _Info) : Object(_Info) {};
