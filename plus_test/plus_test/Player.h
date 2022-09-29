@@ -9,6 +9,7 @@ private :
 	int DEF;
 	int SPEED;
 	int MAGNET;
+	int percent;
 
 	ULONGLONG Time;
 	ULONGLONG FireTime;
@@ -35,8 +36,7 @@ public :
 	int GetSpeed() { return SPEED; }
 	int GetMagnet() { return MAGNET; }
 	
-	void PlayerLevelCheck();
-		
+	bool PlayerLevelCheck();
 
 	Player();
 	Player(Transform _Info) : Object(_Info) {};

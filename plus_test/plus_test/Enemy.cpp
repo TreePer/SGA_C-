@@ -15,6 +15,7 @@ Object* Enemy::Start(string _Key) {
 	Info.Scale = Vector3(1.0f, 1.0f);
 	Target = nullptr;
 	HP = 200;
+	ATK = 5;
 
 	return this;
 }

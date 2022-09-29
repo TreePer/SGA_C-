@@ -3,6 +3,8 @@
 #include "Menu.h"
 #include "Stage.h"
 #include "Upgrade.h"
+#include "GameOver.h"
+#include "LevelUp.h"
 
 SceneManager* SceneManager::Instance = nullptr;
 
@@ -38,6 +40,12 @@ void SceneManager::SetScene(SCENEID _state) {
 		break;
 	case SCENEID::UPGRADE :
 		SceneState = new Upgrade;
+		break;
+	case SCENEID::GameOver :
+		SceneState = new GameOver;
+		break;
+	case SCENEID::LevelUp :
+		SceneState = new LevelUp;
 		break;
 	}
 

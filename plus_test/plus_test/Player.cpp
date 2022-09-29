@@ -3,6 +3,7 @@
 #include "ObjectManager.h"
 #include "CursorManager.h"
 #include "ObjectpoolManager.h"
+#include "SceneManager.h"
 
 Object* Player::Start(string _Key) {
 	LV = 1;
@@ -11,7 +12,8 @@ Object* Player::Start(string _Key) {
 	ATK = 1;
 	DEF = 1;
 	SPEED = 1;
-	MAGNET = 2;
+	MAGNET = 0;
+	HP = 100;
 	Key = "Player";
 
 	Time = GetTickCount64();
@@ -75,13 +77,30 @@ int Player::Update() {
 		Time = GetTickCount64();
 	}
 
-	PlayerLevelCheck();
+	ObjectManager::GetInstance()->CollisionCheck(this);
+
+	if (HP < 1)
+		SceneManager::GetInstance()->SetScene(SCENEID::GameOver);
+
+	if (PlayerLevelCheck()) {
+		SceneManager::GetInstance()->SetScene(SCENEID::LevelUp);
+	}
 
 	return 0;
 }
 
 void Player::Render() {
-	CursorManger::GetInstance()->WriteBuffer(Info.Position, (char*)"Q"); 
+	if(EXP > 0)
+		percent = EXP * 100 / MAXEXP;
+
+	for (int i = 0; i < percent; ++i) {
+		CursorManger::GetInstance()->WriteBuffer(i, 0, (char*)"|", 3);
+	}
+	for (int i = percent; i < 130; ++i) {
+		CursorManger::GetInstance()->WriteBuffer(i, 0, (char*)"|", 8);
+	}
+	percent = 0;
+	CursorManger::GetInstance()->WriteBuffer(Info.Position, (char*)"P"); 
 	char buffer[32] = " ";
 	sprintf(buffer, "ATK : %d", ATK);
 	CursorManger::GetInstance()->WriteBuffer(1.0f, 1.0f, buffer);
@@ -95,6 +114,8 @@ void Player::Render() {
 	CursorManger::GetInstance()->WriteBuffer(1.0f, 5.0f, buffer);
 	sprintf(buffer, "LV : %d", LV);
 	CursorManger::GetInstance()->WriteBuffer(1.0f, 6.0f, buffer);
+	sprintf(buffer, "HP : %d", HP);
+	CursorManger::GetInstance()->WriteBuffer(1.0f, 7.0f, buffer);
 }
 
 void Player::Release() {
@@ -103,16 +124,20 @@ void Player::SetDef(int _Value) { DEF = _Value; }
 void Player::SetSpeed(int _Value) { SPEED = _Value; }
 void Player::SetMagnet(int _Value) { MAGNET = _Value; }
 
-void Player::SetExp(int _Value) { EXP = _Value; }
+void Player::SetExp(int _Value) { EXP = EXP + _Value; }
 
 
 
-void Player::PlayerLevelCheck() { 
+bool Player::PlayerLevelCheck() {
 	if (MAXEXP <= EXP) {
 		EXP -= MAXEXP;
 		++LV;
 		MAXEXP = LV * 100;
+
+		return true;
 	}
+
+	return false;
 }
 
 Player::Player() : FireTime(GetTickCount64()), BookTime(GetTickCount64()), Time(GetTickCount64()) {

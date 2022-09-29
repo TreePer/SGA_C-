@@ -3,6 +3,8 @@
 #include "InputManager.h"
 #include "CursorManager.h"
 #include "ObjectManager.h"
+#include "PrototypeManager.h"
+#include "Player.h"
 
 Logo::Logo() : time(GetTickCount64()), width(0){
 
@@ -35,6 +37,11 @@ Logo::~Logo() {
 
 void Logo::Start() {
 	ObjectManager::GetInstance()->Start();
+	Object* pObj = PrototypeManager::GetInstance()->FindObject("Player")->Clone();
+	ObjectManager::GetInstance()->AddObject("Fire");
+	ObjectManager::GetInstance()->AddObject("Book");
+	if (pObj != nullptr)
+		ObjectManager::GetInstance()->SetPlayer(pObj);
 }
 
 void Logo::Update() {

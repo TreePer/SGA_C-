@@ -1,8 +1,11 @@
 #pragma once
 #include "Object.h"
+class Object;
 class ExpItem : public Object {
 private:
 	int EXP;
+	Object* pPlayer;
+
 public:
 	ExpItem();
 	ExpItem(Transform _Info) : Object(_Info) {};

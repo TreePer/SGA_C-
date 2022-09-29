@@ -6,7 +6,9 @@ enum class SCENEID {
 	MENU,
 	STAGE,
 	EXIT,
-	UPGRADE
+	UPGRADE,
+	GameOver,
+	LevelUp
 };
 
 enum SkillList {

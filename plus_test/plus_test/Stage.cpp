@@ -17,13 +17,6 @@ Stage::~Stage() {
 
 void Stage::Start() {
 	EnemyTime = GetTickCount64();
-	Object* pObj = PrototypeManager::GetInstance()->FindObject("Player")->Clone();
-
-	if (pObj != nullptr)
-		ObjectManager::GetInstance()->SetPlayer(pObj);
-
-	ObjectManager::GetInstance()->AddObject("Fire");
-	ObjectManager::GetInstance()->AddObject("Book");
 }
 
 void Stage::Update() {
@@ -31,7 +24,7 @@ void Stage::Update() {
 		
 		srand(GetTickCount64() * GetTickCount64() / 2 * 12314);
 		float x = rand() % 130;
-		float y = rand() % 40;
+		float y = (rand() % 38) + 1;
 		ObjectManager::GetInstance()->AddObject(Vector3(x, y), "Enemy");
 
 		EnemyTime = GetTickCount64();

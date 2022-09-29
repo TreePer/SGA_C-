@@ -81,24 +81,52 @@ void ObjectpoolManager::SwitchingObject(string _Key, Transform _Info) {
 }
 
 void ObjectpoolManager::CollisonObject(Object* _pObj) {
-	
-	if (!EnableList.empty()) {
-		map<string, list<Object*>>::iterator iter = EnableList.find("Enemy");
-		if (iter != EnableList.end()) {
-			for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2) {
-				if (_pObj->GetKey() == "Book") {
-					for (int i = 0; i < 6; ++i) {
-						if (CollisionManager::RectCollision(((Book*)_pObj)->GetTransform(i), (*iter2)->GetTransform())) {
+	if (_pObj->GetKey() == "Player") {
+		if (!EnableList.empty()) {
+			map<string, list<Object*>>::iterator iter = EnableList.find("Enemy");
+			if (iter != EnableList.end()) {
+				for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2) {
+					if (CollisionManager::RectCollision(_pObj->GetTransform(), (*iter2)->GetTransform())) {
+						_pObj->SetHp(_pObj->GetHp() - (*iter2)->GetAtk());
+					}
+				}
+			}
+		}	
+	}
+	else {
+		if (!EnableList.empty()) {
+			map<string, list<Object*>>::iterator iter = EnableList.find("Enemy");
+			if (iter != EnableList.end()) {
+				for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2) {
+					if (_pObj->GetKey() == "Book") {
+						for (int i = 0; i < 6; ++i) {
+							if (CollisionManager::RectCollision(((Book*)_pObj)->GetTransform(i), (*iter2)->GetTransform())) {
+								(*iter2)->SetHp((*iter2)->GetHp() - _pObj->GetAtk());
+							}
+						}
+					}
+					else {
+						if (CollisionManager::RectCollision(_pObj->GetTransform(), (*iter2)->GetTransform())) {
 							(*iter2)->SetHp((*iter2)->GetHp() - _pObj->GetAtk());
 						}
 					}
 				}
-				else {
-					if (CollisionManager::RectCollision(_pObj->GetTransform(), (*iter2)->GetTransform())) {
-						(*iter2)->SetHp((*iter2)->GetHp() - _pObj->GetAtk());
-					}
-				}
 			}
+		}
+	}
+}
+
+void ObjectpoolManager::UpdateAtk(string _Key, int _Val) {
+	map<string, list<Object*>>::iterator iter = EnableList.find(_Key);
+	if (iter != EnableList.end()) {
+		for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2) {
+			(*iter2)->SetAtk(_Val);
+		}
+	}
+	map<string, list<Object*>>::iterator iter3 = DisableList.find(_Key);
+	if (iter3 != DisableList.end()) {
+		for (auto iter2 = iter3->second.begin(); iter2 != iter3->second.end(); ++iter2) {
+			(*iter2)->SetAtk(_Val);
 		}
 	}
 }
@@ -125,8 +153,8 @@ void ObjectpoolManager::Render() {
 		}
 	}	
 
-	CursorManger::GetInstance()->WriteBuffer(10, 10, EnableList["Enemy"].size());
-	CursorManger::GetInstance()->WriteBuffer(10, 11, DisableList["Enemy"].size());
+	CursorManger::GetInstance()->WriteBuffer(10, 10, EnableList["ExpItem"].size());
+	CursorManger::GetInstance()->WriteBuffer(10, 11, DisableList["ExpItem"].size());
 }
 
 ObjectpoolManager::ObjectpoolManager() {

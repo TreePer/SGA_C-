@@ -53,6 +53,20 @@ void CursorManger::WriteBuffer(float _x, float _y, int _Value, int _color) {
 	WriteFile(HBuffer[BufferIndex], _str, (DWORD)strlen(_str), &dw, NULL);
 }
 
+void CursorManger::WriteBuffer(float _x, float _y, string _string, int _Color) {
+	COORD CursorPosition = { (SHORT)_x , (SHORT)_y };
+
+	SetConsoleCursorPosition(HBuffer[BufferIndex], CursorPosition);
+
+	SetColor(_Color);
+
+	DWORD dw;
+
+	char* _str = (char*)_string.c_str();
+
+	WriteFile(HBuffer[BufferIndex], _str, (DWORD)strlen(_str), &dw, NULL);
+}
+
 void CursorManger::WriteBuffer(Vector3 _Position, char* _str, int _color) {
 	COORD pos = { (SHORT)_Position.x, (SHORT)_Position.y };
 	DWORD dw = 0;

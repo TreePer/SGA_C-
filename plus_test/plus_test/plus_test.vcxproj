@@ -85,7 +85,9 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="ExpItem.cpp" />
     <ClCompile Include="Fire.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="LevelUp.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="MainUpdate.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -111,8 +113,10 @@
     <ClInclude Include="Enum.h" />
     <ClInclude Include="ExpItem.h" />
     <ClInclude Include="Fire.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Headers.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="LevelUp.h" />
     <ClInclude Include="Logo.h" />
     <ClInclude Include="MainUpdate.h" />
     <ClInclude Include="MathManager.h" />

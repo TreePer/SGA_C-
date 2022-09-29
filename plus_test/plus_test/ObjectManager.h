@@ -29,6 +29,8 @@ public :
 
 	void CollisionCheck(Object* _pObj);
 
+	void UpdateObjectAtk(string _Key, int _Val);
+
 	Object* GetPlayer() { return pPlayer; }
 	void SetPlayer(Object* _Object) { pPlayer = _Object; }
 

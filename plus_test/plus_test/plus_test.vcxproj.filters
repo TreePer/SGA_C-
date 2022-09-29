@@ -91,6 +91,12 @@
     <Filter Include="소스 파일\Object\Skill\Fire">
       <UniqueIdentifier>{310ff81e-3d72-4004-a6d3-331636764099}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Scene\GameOver">
+      <UniqueIdentifier>{32230f63-9c98-4d8f-8b81-d88609f171b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\LevelUp">
+      <UniqueIdentifier>{8bb38234-00c3-4021-b521-ddd2d7f88136}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -155,6 +161,12 @@
     </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>소스 파일\Scene\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelUp.cpp">
+      <Filter>소스 파일\Scene\LevelUp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +250,12 @@
     </ClInclude>
     <ClInclude Include="Fire.h">
       <Filter>소스 파일\Object\Skill\Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>소스 파일\Scene\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelUp.h">
+      <Filter>소스 파일\Scene\LevelUp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

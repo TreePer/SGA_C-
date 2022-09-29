@@ -5,7 +5,7 @@
 #include "CollisionManager.h"
 #include "ObjectManager.h"
 
-ExpItem::ExpItem() : EXP(10) {
+ExpItem::ExpItem() : EXP(10), pPlayer(nullptr) {
 }
 
 ExpItem::~ExpItem() {
@@ -22,7 +22,7 @@ Object* ExpItem::Start(string _Key) {
 }
 
 int ExpItem::Update() {
-    Object* pPlayer = ObjectManager::GetInstance()->GetPlayer();
+    pPlayer = ObjectManager::GetInstance()->GetPlayer();
     if (Target == nullptr) {
         if (CollisionManager::ExpCollision(pPlayer->GetTransform(), Info, ((Player*)pPlayer)->GetMagnet())) {
             Target = pPlayer;
@@ -31,12 +31,15 @@ int ExpItem::Update() {
     else {
         Target = ObjectManager::GetInstance()->GetPlayer();
         Info.Direction = MathManager::GetDirection(Info.Position, Target->GetPosition());
-        Info.Position += Info.Direction;
-
-        if (CollisionManager::RectCollision(pPlayer->GetTransform(), Info))
-            ((Player*)pPlayer)->SetExp(((Player*)pPlayer)->GetExp() + EXP);
-            return 1;
+        Info.Position += Info.Direction * 3;
     }
+    int a = ((Player*)pPlayer)->GetMagnet();
+    if (CollisionManager::ExpCollision(pPlayer->GetTransform(), Info, (int)(a / 2))) {
+        ((Player*)pPlayer)->SetExp(EXP);
+        return 1;
+    }
+        
+    
     
     return 0;
 }

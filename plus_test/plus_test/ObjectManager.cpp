@@ -19,7 +19,6 @@ ObjectManager::ObjectManager() : pPlayer(nullptr), FireTime(0), BookTime(0){
 }
 
 void ObjectManager::Start() {
-	pPlayer = ObjectFactory<Player>::CreateObject();
 	FireTime = GetTickCount64();
 	BookTime = GetTickCount64();
 }
@@ -73,6 +72,11 @@ void ObjectManager::AddObject(Transform _Info, string _Key) {
 
 void ObjectManager::CollisionCheck(Object* _pObj) {
 	ObjectpoolManager::GetInstance()->CollisonObject(_pObj);
+}
+
+void ObjectManager::UpdateObjectAtk(string _Key, int _Val) {
+	ObjectpoolManager::GetInstance()->UpdateAtk(_Key, _Val);
+
 }
 
 ObjectManager::~ObjectManager() {

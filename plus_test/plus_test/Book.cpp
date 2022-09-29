@@ -121,7 +121,7 @@ void Book::Render() {
 	for (int i = 0; i < 6; i++) {
 		if(Texture[i]->Position.x > 0 &&
 			Texture[i]->Position.x < 129 &&
-			Texture[i]->Position.y > 0 &&
+			Texture[i]->Position.y > 1 &&
 			Texture[i]->Position.y < 39)
 		CursorManger::GetInstance()->WriteBuffer(Texture[i]->Position.x, Texture[i]->Position.y, (char*)"бр", 13);
 	}

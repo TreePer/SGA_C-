@@ -38,7 +38,7 @@ int Arrow::Update() {
             return 1;
     }
     else if (Info.Rotation.y == -1.0f) {
-        if (Info.Position.y > 1)
+        if (Info.Position.y > 2)
             Info.Position.y--;
         else
             return 1;
